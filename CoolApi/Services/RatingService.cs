@@ -3,10 +3,6 @@ using CoolApi.Models;
 
 namespace CoolApi.Services
 {
-    public interface IRatingService
-    {
-        IRating GetRating(string id);
-    }
     class RatingService : IRatingService
     {
         private readonly IDictionary<string, Rating> _ratings = new Dictionary<string, Rating>();

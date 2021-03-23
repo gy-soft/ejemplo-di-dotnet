@@ -2,11 +2,7 @@ using CoolApi.Models;
 
 namespace CoolApi.Services
 {
-    public interface IHeroRatingService
-    {
-        IHeroRating GetHeroRating(string id);
-    }
-    public class HeroRatingService : IHeroRatingService
+    class HeroRatingService : IHeroRatingService
     {
         private readonly IHeroService heroService;
         private readonly IRatingService ratingService;

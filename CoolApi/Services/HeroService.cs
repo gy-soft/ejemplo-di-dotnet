@@ -3,11 +3,7 @@ using CoolApi.Models;
 
 namespace CoolApi.Services
 {
-    public interface IHeroService
-    {
-        IHero GetHero(string id);
-    }
-    public class HeroService : IHeroService
+    class HeroService : IHeroService
     {
         private readonly IDictionary<string, Hero> _heroes = new Dictionary<string, Hero>();
 

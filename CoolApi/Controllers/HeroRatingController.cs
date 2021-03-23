@@ -1,5 +1,4 @@
 using Contracts;
-using CoolApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoolApi.Controllers

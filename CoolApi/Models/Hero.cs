@@ -3,17 +3,17 @@ using Contracts;
 
 namespace CoolApi.Models
 {
-    class Hero : IHero
+class Hero : IHero
+{
+    public Hero(string id, string name, IEnumerable<string> friends)
     {
-        public Hero(string id, string name, IEnumerable<string> friends)
-        {
-            Id = id;
-            Name = name;
-            Friends = friends;
-        }
-
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public IEnumerable<string> Friends { get; set; }
+        Id = id;
+        Name = name;
+        Friends = friends;
     }
+
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public IEnumerable<string> Friends { get; set; }
+}
 }

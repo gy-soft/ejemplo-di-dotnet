@@ -2,11 +2,11 @@ namespace CoolApi.Models
 {
     class HeroRating : IHeroRating
     {
-        public HeroRating(string id, double rate, string name)
+        public HeroRating(IHero hero, IRating rating)
         {
-            Id = id;
-            Rate = rate;
-            Name = name;
+            Id = hero.Id;
+            Name = hero.Name;
+            Rate = rating.Rate;
         }
 
         public string Id { get; set; }

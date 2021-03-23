@@ -30,9 +30,7 @@ namespace CoolApi.Services
             }
 
             return new HeroRating(
-                rating.Id,
-                rating.Rate,
-                hero.Name
+                hero, rating
             );
         }
     }

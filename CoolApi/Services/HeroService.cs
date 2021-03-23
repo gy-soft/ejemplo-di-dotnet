@@ -5,7 +5,7 @@ namespace CoolApi.Services
 {
     public interface IHeroService
     {
-        Hero GetHero(string id);
+        IHero GetHero(string id);
     }
     public class HeroService : IHeroService
     {
@@ -18,7 +18,7 @@ namespace CoolApi.Services
             _heroes.Add("luke", new Hero("luke", "Luke Skywaler", new string[] { "r2", "kenobi", "solo" }));
         }
 
-        public Hero GetHero(string id)
+        public IHero GetHero(string id)
         {
             return _heroes.ContainsKey(id)
                 ? _heroes[id]

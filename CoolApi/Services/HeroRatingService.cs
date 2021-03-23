@@ -4,7 +4,7 @@ namespace CoolApi.Services
 {
     public interface IHeroRatingService
     {
-        HeroRating GetHeroRating(string id);
+        IHeroRating GetHeroRating(string id);
     }
     public class HeroRatingService : IHeroRatingService
     {
@@ -19,10 +19,10 @@ namespace CoolApi.Services
             this.ratingService = ratingService;
         }
 
-        public HeroRating GetHeroRating(string id)
+        public IHeroRating GetHeroRating(string id)
         {
-            Hero hero = heroService.GetHero(id);
-            Rating rating = ratingService.GetRating(id);
+            IHero hero = heroService.GetHero(id);
+            IRating rating = ratingService.GetRating(id);
 
             if (hero == null || rating == null)
             {

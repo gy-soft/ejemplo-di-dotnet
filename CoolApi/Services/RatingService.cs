@@ -5,9 +5,9 @@ namespace CoolApi.Services
 {
     public interface IRatingService
     {
-        Rating GetRating(string id);
+        IRating GetRating(string id);
     }
-    public class RatingService : IRatingService
+    class RatingService : IRatingService
     {
         private readonly IDictionary<string, Rating> _ratings = new Dictionary<string, Rating>();
 
@@ -18,7 +18,7 @@ namespace CoolApi.Services
             _ratings.Add("solo", new Rating("solo", 4.57));
         }
 
-        public Rating GetRating(string id)
+        public IRating GetRating(string id)
         {
             return _ratings.ContainsKey(id)
                 ? _ratings[id]

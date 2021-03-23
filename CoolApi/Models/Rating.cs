@@ -1,6 +1,11 @@
 namespace CoolApi.Models
 {
-    public class Rating
+    public interface IRating
+    {
+        string Id { get; set; }
+        double Rate { get; set; }
+    }
+    class Rating : IRating
     {
         public Rating(string id, double rate)
         {

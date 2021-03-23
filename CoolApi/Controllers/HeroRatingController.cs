@@ -18,7 +18,7 @@ namespace CoolApi.Controllers
         [Route("{id}")]
         public IActionResult GetRating(string id)
         {
-            HeroRating heroRating = heroRatingService.GetHeroRating(id);
+            IHeroRating heroRating = heroRatingService.GetHeroRating(id);
             if (heroRating == null)
             {
                 return new StatusCodeResult(404);

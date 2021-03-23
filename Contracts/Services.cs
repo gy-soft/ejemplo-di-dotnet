@@ -1,6 +1,4 @@
-using CoolApi.Models;
-
-namespace CoolApi.Services
+namespace Contracts
 {
     public interface IHeroService
     {

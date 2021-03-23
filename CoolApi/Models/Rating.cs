@@ -1,3 +1,5 @@
+using Contracts;
+
 namespace CoolApi.Models
 {
     class Rating : IRating

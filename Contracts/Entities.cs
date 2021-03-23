@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CoolApi.Models
+namespace Contracts
 {
     public interface IHero
     {

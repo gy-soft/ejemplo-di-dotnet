@@ -1,4 +1,4 @@
-using CoolApi.Models;
+using Contracts;
 using CoolApi.Services;
 using Microsoft.AspNetCore.Mvc;
 

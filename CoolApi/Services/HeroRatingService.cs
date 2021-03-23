@@ -1,3 +1,4 @@
+using Contracts;
 using CoolApi.Models;
 
 namespace CoolApi.Services

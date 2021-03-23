@@ -1,9 +1,5 @@
 namespace CoolApi.Models
 {
-    public interface IHeroRating : IRating
-    {
-        string Name { get; set; }
-    }
     class HeroRating : IHeroRating
     {
         public HeroRating(string id, double rate, string name)

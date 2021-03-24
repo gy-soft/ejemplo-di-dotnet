@@ -23,7 +23,10 @@ namespace CoolApi.Services
                 return await Task.FromResult(default(IHero));
             }
             string content = await response.Content.ReadAsStringAsync();
-            var hero = JsonSerializer.Deserialize<Hero>(content);
+            var hero = JsonSerializer.Deserialize<Hero>(content, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
             return hero;
         }
     }

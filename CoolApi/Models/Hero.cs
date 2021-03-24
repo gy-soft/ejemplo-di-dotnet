@@ -5,6 +5,7 @@ namespace CoolApi.Models
 {
 class Hero : IHero
 {
+    public Hero() {}
     public Hero(string id, string name, IEnumerable<string> friends)
     {
         Id = id;

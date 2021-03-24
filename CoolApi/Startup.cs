@@ -1,7 +1,9 @@
 using Contracts;
+using CoolApi.Http;
 using CoolApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,10 +23,12 @@ namespace CoolApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<HeroesHttpMessageHandler>();
             services.AddHttpClient<IHeroService, HeroService>(c =>
             {
                 c.BaseAddress = new System.Uri("http://127.0.0.1:3000");
-            });
+            })
+            .AddHttpMessageHandler<HeroesHttpMessageHandler>();
             services.AddScoped<IRatingService, RatingService>();
             services.AddScoped<IHeroRatingService, HeroRatingService>();
         }
@@ -35,6 +39,10 @@ namespace CoolApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(new DefualtExceptionHandlerOptions());
             }
 
             app.UseHttpsRedirection();

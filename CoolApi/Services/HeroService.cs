@@ -18,7 +18,7 @@ namespace CoolApi.Services
         public async Task<IHero> GetHero(string id)
         {
             var response = await Client.GetAsync($"/heroes/{id}");
-            if (!response.IsSuccessStatusCode)
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 return await Task.FromResult(default(IHero));
             }

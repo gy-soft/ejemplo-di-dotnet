@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Contracts;
 using CoolApi.Models;
 
@@ -9,16 +10,16 @@ namespace CoolApi.Services
         private readonly IRatingService ratingService;
 
         public HeroRatingService(
-            IHeroService heroService,
+            HeroService heroService,
             IRatingService ratingService
         ) {
             this.heroService = heroService;
             this.ratingService = ratingService;
         }
 
-        public IHeroRating GetHeroRating(string id)
+        public async Task<IHeroRating> GetHeroRating(string id)
         {
-            IHero hero = heroService.GetHero(id);
+            IHero hero = await heroService.GetHero(id);
             IRating rating = ratingService.GetRating(id);
 
             if (hero == null || rating == null)

@@ -1,8 +1,10 @@
+using System.Threading.Tasks;
+
 namespace Contracts
 {
     public interface IHeroService
     {
-        IHero GetHero(string id);
+        Task<IHero> GetHero(string id);
     }
     public interface IRatingService
     {
@@ -10,6 +12,6 @@ namespace Contracts
     }
     public interface IHeroRatingService
     {
-        IHeroRating GetHeroRating(string id);
+        Task<IHeroRating> GetHeroRating(string id);
     }
 }

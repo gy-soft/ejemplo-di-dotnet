@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,9 @@ namespace CoolApi.Controllers
         }
 
         [Route("{id}")]
-        public IActionResult GetHeroRating(string id)
+        public async Task<IActionResult> GetHeroRating(string id)
         {
-            IHeroRating heroRating = heroRatingService.GetHeroRating(id);
+            IHeroRating heroRating = await heroRatingService.GetHeroRating(id);
             if (heroRating == null)
             {
                 return new StatusCodeResult(404);

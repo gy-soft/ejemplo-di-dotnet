@@ -12,6 +12,7 @@ namespace CoolApi.Services
 
         public HeroService(HttpClient httpClient)
         {
+            httpClient.BaseAddress = new System.Uri("http://127.0.0.1:3000");
             Client = httpClient;
         }
 

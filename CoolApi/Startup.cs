@@ -24,11 +24,8 @@ namespace CoolApi
         {
             services.AddControllers();
             services.AddTransient<HeroesHttpMessageHandler>();
-            services.AddHttpClient<IHeroService, HeroService>(c =>
-            {
-                c.BaseAddress = new System.Uri("http://127.0.0.1:3000");
-            })
-            .AddHttpMessageHandler<HeroesHttpMessageHandler>();
+            services.AddHttpClient<IHeroService, HeroService>()
+                .AddHttpMessageHandler<HeroesHttpMessageHandler>();
             services.AddScoped<IRatingService, RatingService>();
             services.AddScoped<IHeroRatingService, HeroRatingService>();
         }

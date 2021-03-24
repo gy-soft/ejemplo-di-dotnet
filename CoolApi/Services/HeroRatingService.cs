@@ -10,7 +10,7 @@ namespace CoolApi.Services
         private readonly IRatingService ratingService;
 
         public HeroRatingService(
-            HeroService heroService,
+            IHeroService heroService,
             IRatingService ratingService
         ) {
             this.heroService = heroService;

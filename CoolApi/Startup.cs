@@ -21,11 +21,10 @@ namespace CoolApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddHttpClient<HeroService>(c =>
+            services.AddHttpClient<IHeroService, HeroService>(c =>
             {
                 c.BaseAddress = new System.Uri("http://127.0.0.1:3000");
             });
-            // services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IRatingService, RatingService>();
             services.AddScoped<IHeroRatingService, HeroRatingService>();
         }

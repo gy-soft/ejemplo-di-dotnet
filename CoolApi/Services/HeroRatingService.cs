@@ -19,7 +19,7 @@ namespace CoolApi.Services
 
         public async Task<IHeroRating> GetHeroRating(string id)
         {
-            IHero hero = await heroService.GetHero(id);
+            IHero hero = await heroService.GetHeroAsync(id);
             IRating rating = ratingService.GetRating(id);
 
             if (hero == null || rating == null)

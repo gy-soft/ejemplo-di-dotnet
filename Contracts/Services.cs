@@ -4,7 +4,7 @@ namespace Contracts
 {
     public interface IHeroService
     {
-        Task<IHero> GetHero(string id);
+        Task<IHero> GetHeroAsync(string id);
     }
     public interface IRatingService
     {

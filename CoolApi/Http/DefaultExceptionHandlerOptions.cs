@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace CoolApi.Http
 {
-    class DefualtExceptionHandlerOptions : ExceptionHandlerOptions
+    class DefaultExceptionHandlerOptions : ExceptionHandlerOptions
     {
         class InternalServerError
         {
@@ -18,7 +18,7 @@ namespace CoolApi.Http
                 traceId = TraceIdentifier;
             }
         }
-        public DefualtExceptionHandlerOptions()
+        public DefaultExceptionHandlerOptions()
         {
             this.ExceptionHandler = (HttpContext context) =>
             {

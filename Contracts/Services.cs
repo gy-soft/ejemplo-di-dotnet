@@ -12,6 +12,6 @@ namespace Contracts
     }
     public interface IHeroRatingService
     {
-        Task<IHeroRating> GetHeroRating(string id);
+        Task<IHeroRating> GetHeroRatingAsync(string id);
     }
 }

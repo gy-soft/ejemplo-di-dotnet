@@ -16,9 +16,9 @@ namespace CoolApi.Controllers
         }
 
         [Route("{id}")]
-        public async Task<IActionResult> GetHeroRating(string id)
+        public async Task<IActionResult> GetHeroRatingAsync(string id)
         {
-            IHeroRating heroRating = await heroRatingService.GetHeroRating(id);
+            IHeroRating heroRating = await heroRatingService.GetHeroRatingAsync(id);
             if (heroRating == null)
             {
                 return new StatusCodeResult(404);

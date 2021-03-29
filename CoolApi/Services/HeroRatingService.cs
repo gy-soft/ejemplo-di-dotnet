@@ -17,7 +17,7 @@ namespace CoolApi.Services
             this.ratingService = ratingService;
         }
 
-        public async Task<IHeroRating> GetHeroRating(string id)
+        public async Task<IHeroRating> GetHeroRatingAsync(string id)
         {
             IHero hero = await heroService.GetHeroAsync(id);
             IRating rating = ratingService.GetRating(id);

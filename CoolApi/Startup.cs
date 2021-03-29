@@ -37,10 +37,6 @@ namespace CoolApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler(new DefaultExceptionHandlerOptions());
-            }
 
             app.UseHttpsRedirection();
 
